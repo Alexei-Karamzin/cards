@@ -1,8 +1,6 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import {Route, Routes} from 'react-router-dom';
-import './App.css';
-import {Main} from './Main';
+import {NavLink} from 'react-router-dom';
+import {Main} from '../../Main';
 
 export const Navbar = () => {
     return <div>
@@ -19,7 +17,7 @@ export const Navbar = () => {
             <NavLink to='/forgot'>Forgot</NavLink>
         </div>
         <div>
-            <NavLink to='/setPass'>SetPass</NavLink>
+            <NavLink to='/set-pass'>SetPass</NavLink>
         </div>
         <div>
             <NavLink to='/profile'>Profile</NavLink>
@@ -33,26 +31,17 @@ export const Navbar = () => {
         <div>
             <NavLink to='/error404'>Error404</NavLink>
         </div>
+        <div>
+            <NavLink to='/test-components'>test components</NavLink>
+        </div>
     </div>
 }
 
 function App() {
     return (
         <div className="App">
-            <div><Navbar /></div>
-            <div>
-                <Routes>
-                    <Route path='/' element={<Main/>} />
-                    <Route path='/login' element={<Login/>} />
-                    <Route path='/register' element={<Register/>} />
-                    <Route path='/forgot' element={<Forgot/>} />
-                    <Route path='/setPass' element={<SetPass/>} />
-                    <Route path='/profile' element={<Profile/>} />
-                    <Route path='/packs' element={<Packs/>} />
-                    <Route path='/cards' element={<Cards/>} />
-                    <Route path='/error404' element={<Error404/>} />
-                </Routes>
-            </div>
+                <Navbar/>
+                <Main/>
         </div>
     );
 }
@@ -62,7 +51,7 @@ export default App;
 
 export const Login = () => {
     return <div>
-        <input />
+        <input/>
         <input type="password"/>
         <div>
             <input type="checkbox"/> remember me
